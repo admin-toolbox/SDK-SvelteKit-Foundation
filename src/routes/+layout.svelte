@@ -1,13 +1,13 @@
 <script lang="ts">
 	import jQuery from 'jquery';
-	import 'foundation-sites/dist/js/foundation.esm.js';
-	import '/src/foundation/foundation.scss';
-	import '../app.scss';
 
-	import { onMount } from 'svelte';
-	import CustomTopBar from '$lib/components/CustomTopBar.svelte';
+	import '$lib/foundation/foundation.scss';
+	import 'foundation-sites/dist/js/foundation.js';
+
+	import TopBarNav from '$lib/components/TopBarNav.svelte';
 	import CustomOffCanvasMenu from '$lib/components/CustomOffCanvasMenu.svelte';
 
+	import { onMount} from 'svelte';
 	onMount(() => {
 		jQuery(document).foundation();
 	});
@@ -24,13 +24,17 @@
 			data-off-canvas
 			data-position="right"
 		>
-			<CustomTopBar />
+			<!-- Fire Off-canvas -->
+			<button type="button" class="button" data-toggle="offCanvasLeft">Open Menu</button>
+	
 		</div>
 		<div class="off-canvas-content" data-off-canvas-content>
-			<slot />
+			<TopBarNav />
+			<div class="grid-container">
+				<slot />
+			</div>
 		</div>
 	</div>
 </div>
 
-<!-- Fire Off-canvas -->
-<button type="button" class="button" data-toggle="offCanvasLeft">Open Menu</button>
+
