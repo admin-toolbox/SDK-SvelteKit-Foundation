@@ -30,7 +30,7 @@ jobs:
           files: |
             build/
             package.json
-            captain-definition
+            Dockerfile
 #            prisma
           outPath: deploy.tar
   
