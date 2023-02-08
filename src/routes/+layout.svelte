@@ -3,10 +3,10 @@
 
 	import TopBarNav from '$lib/components/TopBarNav.svelte';
 	import CustomOffCanvasMenu from '$lib/components/CustomOffCanvasMenu.svelte';
-	
+
 	import jQuery from 'jquery'; // Required for Foundation
 	import 'foundation-sites/dist/js/foundation.js';
-	import { onMount} from 'svelte';
+	import { onMount } from 'svelte';
 	onMount(() => {
 		jQuery(document).foundation();
 	});
@@ -22,11 +22,7 @@
 			id="offCanvasRight"
 			data-off-canvas
 			data-position="right"
-		>
-			<!-- Fire Off-canvas -->
-			<button type="button" class="button" data-toggle="offCanvasLeft">Open Menu</button>
-	
-		</div>
+		/>
 		<div class="off-canvas-content" data-off-canvas-content>
 			<TopBarNav />
 			<div class="grid-container">
@@ -35,5 +31,3 @@
 		</div>
 	</div>
 </div>
-
-
